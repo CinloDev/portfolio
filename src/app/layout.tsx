@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
+import { Poppins, PT_Sans } from "next/font/google";
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Footer from '@/components/footer';
 import ConditionalHeader from '@/components/conditional-header';
 import { ThemeProvider } from '@/components/theme-provider';
 import LocaleProvider from '@/components/language-provider';
+
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "600", "700"],
+    variable: "--font-poppins",
+    display: "swap",
+});
+
+const ptSans = PT_Sans({
+    subsets: ["latin"],
+    weight: ["400", "700"],
+    variable: "--font-pt-sans",
+    display: "swap",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
     const cookieStore = await cookies();
@@ -71,15 +86,12 @@ export default async function RootLayout({
     }
 
     return (
-        <html lang={locale} className="!scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
-            <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap"
-                    rel="stylesheet"
-                />
-            </head>
+        <html
+            lang={locale}
+            className={`${poppins.variable} ${ptSans.variable} !scroll-smooth`}
+            data-scroll-behavior="smooth"
+            suppressHydrationWarning
+        >
             <body className="font-body text-foreground antialiased min-h-screen flex flex-col">
                 <ThemeProvider
                     attribute="class"
