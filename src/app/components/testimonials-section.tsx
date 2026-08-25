@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { testimonials } from '@/lib/data';
 import { useLocale } from '@/components/language-provider';
 import {
@@ -66,9 +67,11 @@ export default function TestimonialsSection() {
                           {/* Author - pegado al bottom */}
                           <div className="mt-auto flex items-center gap-3 relative z-10">
                             {testimonial.avatar && (
-                              <img
+                              <Image
                                 src={testimonial.avatar}
                                 alt={t(testimonial.authorKey)}
+                                width={56}
+                                height={56}
                                 className="w-14 h-14 rounded-full border-2 border-[hsl(var(--primary))] object-cover"
                               />
                             )}
