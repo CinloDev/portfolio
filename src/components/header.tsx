@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import { navLinks } from '@/lib/data';
 import { ThemeToggle } from './theme-toggle';
+import { LanguageToggle } from './language-toggle';
 import { useLocale } from './language-provider';
 
 function DesktopNav() {
@@ -71,12 +72,13 @@ export default function Header() {
             >
             <div className="mx-auto flex h-20 w-full max-w-[1200px] items-center justify-between px-4 md:px-6">
                 <div className="flex items-center gap-2 logo-wrapper" aria-label="Inicio" role="banner">
-                <Logo />
+                    <Logo />
                 </div>
 
                 <DesktopNav />
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                    <LanguageToggle />
                     <ThemeToggle />
 
                     <div className="md:hidden">
