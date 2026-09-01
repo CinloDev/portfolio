@@ -22,6 +22,49 @@ const ptSans = PT_Sans({
     display: "swap",
 });
 
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'Person',
+            '@id': 'https://portfolio.cinlodev.com/#person',
+            name: 'Cintia Losada',
+            alternateName: 'CinloDev',
+            jobTitle: 'Frontend Engineer & Product Developer',
+            url: 'https://portfolio.cinlodev.com',
+            image: 'https://portfolio.cinlodev.com/assets/about-me.png',
+            sameAs: [
+                'https://github.com/CinloDev',
+                'https://www.linkedin.com/in/cintialosada',
+                'https://x.com/cinlodev',
+            ],
+            knowsAbout: [
+                'React',
+                'Next.js',
+                'TypeScript',
+                'Frontend Engineering',
+                'Software Architecture',
+                'SaaS Development',
+                'Tailwind CSS',
+                'Supabase',
+                'PostgreSQL',
+                'Vue',
+            ],
+        },
+        {
+            '@type': 'WebSite',
+            '@id': 'https://portfolio.cinlodev.com/#website',
+            url: 'https://portfolio.cinlodev.com',
+            name: 'Cintia Losada | Portfolio',
+            description: 'Portfolio profesional de Cintia Losada, Frontend Engineer & Product Developer.',
+            publisher: {
+                '@id': 'https://portfolio.cinlodev.com/#person',
+            },
+            inLanguage: ['es', 'en'],
+        },
+    ],
+};
+
 export async function generateMetadata(): Promise<Metadata> {
     const cookieStore = await cookies();
     let locale = cookieStore.get('NEXT_LOCALE')?.value;
@@ -44,8 +87,40 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         metadataBase: new URL("https://portfolio.cinlodev.com"),
-        title,
+        title: {
+            default: title,
+            template: "%s | Cintia Losada",
+        },
         description,
+        authors: [{ name: "Cintia Losada", url: "https://portfolio.cinlodev.com" }],
+        creator: "Cintia Losada",
+        publisher: "Cintia Losada",
+        keywords: [
+            "Cintia Losada",
+            "CinloDev",
+            "Frontend Engineer",
+            "Product Developer",
+            "React",
+            "Next.js",
+            "TypeScript",
+            "SaaS",
+            "Software Architecture",
+            "Tailwind CSS",
+            "Supabase",
+            "PostgreSQL",
+            "Portfolio",
+        ],
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
         openGraph: {
             title,
             description,
@@ -92,6 +167,12 @@ export default async function RootLayout({
             data-scroll-behavior="smooth"
             suppressHydrationWarning
         >
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
             <body className="font-body text-foreground antialiased min-h-screen flex flex-col">
                 <ThemeProvider
                     attribute="class"
