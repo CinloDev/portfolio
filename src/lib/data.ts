@@ -1,4 +1,4 @@
-import { Code, Megaphone, Linkedin, Github, InstagramIcon, MessageCircle, Rocket, Users, PenTool, MonitorSmartphone, Twitter } from 'lucide-react';
+import { Linkedin, Github, InstagramIcon, Twitter } from 'lucide-react';
 import { allImages, ImageAsset } from './image-assets';
 
 export const navLinks = [
@@ -7,43 +7,6 @@ export const navLinks = [
     { href: '/#work', labelKey: 'nav.work' },
     { href: '/#about', labelKey: 'nav.about' },
     { href: '/#contact', labelKey: 'nav.contact' },
-];
-
-export const services = [
-    {
-        titleKey: 'services.web.title',
-        descriptionKey: 'services.web.description',
-        icon: Code,
-        featured: true,
-        includesKeys: [
-            'services.web.includes.frontend',
-            'services.web.includes.backend',
-            'services.web.includes.responsive',
-            'services.web.includes.deploy',
-        ],
-    },
-    {
-        titleKey: 'services.ui.title',
-        descriptionKey: 'services.ui.description',
-        icon: PenTool,
-        includesKeys: [
-            'services.ui.includes.ui',
-            'services.ui.includes.design',
-            'services.ui.includes.performance',
-            'services.ui.includes.accessibility',
-        ],
-    },
-    {
-        titleKey: 'services.maintenance.title',
-        descriptionKey: 'services.maintenance.description',
-        icon: Rocket,
-        includesKeys: [
-            'services.maintenance.includes.refactors',
-            'services.maintenance.includes.bugs',
-            'services.maintenance.includes.features',
-            'services.maintenance.includes.performance',
-        ],
-    },
 ];
 
 export interface ImagePlaceholder extends ImageAsset { }
@@ -112,7 +75,7 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 'alDia',
         titleKey: 'projects.alDia.title',
         descriptionKey: 'projects.alDia.description',
-        tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+        tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
         image: getImage('alDia'),
         liveUrl: 'https://aldia.cinlodev.com',
         githubUrl: 'https://github.com/CinloDev/aldia-showcase',
@@ -139,10 +102,10 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 'mailQuark',
         titleKey: 'projects.mailQuark.title',
         descriptionKey: 'projects.mailQuark.description',
-        tags: ['Next.js', 'TypeScript', 'SMTP', 'Vanilla CSS'],
+        tags: ['Next.js', 'React', 'TypeScript', 'Docker', 'Tailwind CSS'],
         image: getImage('mailQuark'),
-        liveUrl: 'https://email-test-public.vercel.app/',
-        githubUrl: 'https://github.com/CinloDev/email_test_public',
+        liveUrl: 'https://mailquark.cinlodev.com/',
+        githubUrl: 'https://github.com/CinloDev/mailquark',
         details: {
             nameKey: 'projects.mailQuark.details.name',
             summaryKey: 'projects.mailQuark.details.summary',
@@ -166,10 +129,10 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 'nekoTools',
         titleKey: 'projects.nekoTools.title',
         descriptionKey: 'projects.nekoTools.description',
-        tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Web Workers', 'Canvas API'],
+        tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
         image: getImage('nekoTools'),
         liveUrl: 'https://nekotools.cinlodev.com/',
-        githubUrl: 'https://github.com/CinloDev/nekotools-showcase',
+        githubUrl: 'https://github.com/CinloDev/nekotools',
         details: {
             nameKey: 'projects.nekoTools.details.name',
             summaryKey: 'projects.nekoTools.details.summary',
@@ -193,10 +156,10 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 'commandCenter',
         titleKey: 'projects.commandCenter.title',
         descriptionKey: 'projects.commandCenter.description',
-        tags: ['JavaScript', 'Vite', 'Tailwind', 'Persistence', 'Automation'],
+        tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
         image: getImage('commandCenter'),
         liveUrl: 'https://vault.cinlodev.com/',
-        githubUrl: 'https://github.com/CinloDev/vault-showcase',
+        githubUrl: 'https://github.com/CinloDev/command-center-dev',
         details: {
             nameKey: 'projects.commandCenter.details.name',
             summaryKey: 'projects.commandCenter.details.summary',
@@ -220,9 +183,10 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 'figuNet',
         titleKey: 'projects.figuNet.title',
         descriptionKey: 'projects.figuNet.description',
-        tags: ['React', 'TypeScript', 'Tailwind CSS', 'PWA', 'Service Workers', 'Gamification'],
+        tags: ['PWA', 'React', 'TypeScript', 'Tailwind CSS'],
         image: getImage('figuNet'),
-        liveUrl: 'https://figunet.com/album',
+        liveUrl: 'https://figunet.cinlodev.com/',
+        githubUrl: 'https://github.com/CinloDev/figunet',
         details: {
             nameKey: 'projects.figuNet.details.name',
             summaryKey: 'projects.figuNet.details.summary',
@@ -244,82 +208,9 @@ export const portfolioProjects: PortfolioProject[] = [
     },
 ];
 
-export const testimonials = [
-    {
-        quoteKey: 'testimonials.0.quote',
-        authorKey: 'testimonials.0.author',
-        companyKey: 'testimonials.0.company',
-        avatar: './images/testimonial-aye.jpg',
-    },
-    {
-        quoteKey: 'testimonials.1.quote',
-        authorKey: 'testimonials.1.author',
-        companyKey: 'testimonials.1.company',
-        avatar: 'https://plus.unsplash.com/premium_photo-1681493353999-a3eea8b95e1d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
-        quoteKey: 'testimonials.2.quote',
-        authorKey: 'testimonials.2.author',
-        companyKey: 'testimonials.2.company',
-        avatar: 'https://plus.unsplash.com/premium_photo-1702598904442-de1d96570fa8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
-        quoteKey: 'testimonials.3.quote',
-        authorKey: 'testimonials.3.author',
-        companyKey: 'testimonials.3.company',
-        avatar: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-    {
-        quoteKey: 'testimonials.4.quote',
-        authorKey: 'testimonials.4.author',
-        companyKey: 'testimonials.4.company',
-        avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    },
-];
-
 export const aboutMe = {
     descriptionKey: 'about.description',
     image: getImage('aboutMe'),
-};
-
-export const skillsSection = {
-    titleKey: 'skills.title',
-    introKey: 'skills.intro',
-    columns: [
-        {
-            titleKey: 'skills.columns.frontend.title',
-            items: [
-                { nameKey: 'skills.columns.frontend.items.react', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.frontend.items.next', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.frontend.items.js', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.frontend.items.tailwind', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.frontend.items.htmlcss', levelKey: 'skills.levels.proficient' },
-            ],
-        },
-        {
-            titleKey: 'skills.columns.backend.title',
-            items: [
-                { nameKey: 'skills.columns.backend.items.node', levelKey: 'skills.levels.working' },
-                { nameKey: 'skills.columns.backend.items.apis', levelKey: 'skills.levels.working' },
-                { nameKey: 'skills.columns.backend.items.auth', levelKey: 'skills.levels.working' },
-                { nameKey: 'skills.columns.backend.items.db', levelKey: 'skills.levels.working' },
-            ],
-        },
-        {
-            titleKey: 'skills.columns.tools.title',
-            items: [
-                { nameKey: 'skills.columns.tools.items.git', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.tools.items.npm', levelKey: 'skills.levels.proficient' },
-                { nameKey: 'skills.columns.tools.items.vercel', levelKey: 'skills.levels.working' },
-                { nameKey: 'skills.columns.tools.items.figma', levelKey: 'skills.levels.familiar' },
-            ],
-        },
-    ],
-    levelsKeys: {
-        proficient: 'skills.levels.proficient',
-        working: 'skills.levels.working',
-        familiar: 'skills.levels.familiar',
-    },
 };
 
 export const socialLinks = [
@@ -337,5 +228,10 @@ export const socialLinks = [
         name: 'Instagram',
         url: 'https://www.instagram.com/cinlodev/',
         icon: InstagramIcon,
-    }
+    },
+    {
+        name: 'Twitter',
+        url: 'https://x.com/cinlodev',
+        icon: Twitter,
+    },
 ];
