@@ -54,3 +54,8 @@ neko.workspace.yaml
 
 # mcp config
 mcp_config.json
+# Local Pi runtime state
+.atl/
+
+# Windows Zone Identifier
+*:Zone.Identifier

@@ -45,6 +45,18 @@
       "imageHint": "professional portrait"
     },
     {
+      "id": "cvEs",
+      "description": "Cintia Losada — Curriculum Vitae (Español).",
+      "imageUrl": "/assets/cintialosada-cv-es.png",
+      "imageHint": "curriculum vitae es"
+    },
+    {
+      "id": "cvEn",
+      "description": "Cintia Losada — Curriculum Vitae (English).",
+      "imageUrl": "/assets/cintialosada-cv-en.png",
+      "imageHint": "curriculum vitae en"
+    },
+    {
       "id": "logo",
       "description": "CinloDev logo.",
       "imageUrl": "/assets/logo.png",
